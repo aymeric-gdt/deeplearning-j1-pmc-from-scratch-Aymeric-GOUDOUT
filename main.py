@@ -4,8 +4,7 @@ Batch vectorized forward/backward pass.
 """
 
 import numpy as np
-from typing import List, Optional, Callable
-import sys
+from typing import List, Optional
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -232,10 +231,10 @@ class MLP:
         self.loss = loss
         self._layers: List[Layer] = []
 
+        n_hidden = len(layer_sizes) - 2
         if activations is None:
-            activations = ["relu"] * (len(layer_sizes) - 2)
-        if len(activations) < len(layer_sizes) - 2:
-            activations += ["relu"] * (len(layer_sizes) - 2 - len(activations))
+            activations = ["relu"] * n_hidden
+        activations = (activations + ["relu"] * n_hidden)[:n_hidden]
 
         # Build hidden layers
         for i in range(len(layer_sizes) - 2):

@@ -1,6 +1,6 @@
 # PMC Batched — Perceptron Multi-Couche from scratch
 
-MLP pur numpy, calcul vectorisé par batch — pas de autograd, pas de框架.
+MLP pur numpy, calcul vectorisé par batch — pas de autograd, pas de framework.
 
 ## Architecture
 
@@ -18,7 +18,7 @@ Loss (MSE ou CrossEntropy)
 
 ## Calcul batch matriciel
 
-Tout le forward et backward est vectorisé en matrices 2D — aucun boucle sur les样本.
+Tout le forward et backward est vectorisé en matrices 2D — aucune boucle sur les exemples.
 
 **Forward pass** d'une couche :
 ```
